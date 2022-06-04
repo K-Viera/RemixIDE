@@ -10,15 +10,16 @@ contract CrowdFunding{
     uint public actualFounds;
     uint public fundrasingGoal;
 
-    constructor(string memory _name,string memory _description,uint memory _fundrasingGoal){
+    constructor(string memory _name,string memory _description,uint _fundrasingGoal){
         name=_name;
         description=_description;
         fundrasingGoal=_fundrasingGoal;
         author=payable(msg.sender);
     }
 
-    function fundProyect() public payable{
-        
+    function fundProject() public payable{
+        author.transfer(msg.value);
+        actualFounds+=msg.value;
     }
 
 }
