@@ -16,10 +16,29 @@ contract CrowdFunding{
         fundrasingGoal=_fundrasingGoal;
         author=payable(msg.sender);
     }
+    
+    event changeName(address editor,string newName);
+    event foundProject(address founder,uint founds);
 
     function fundProject() public payable{
         author.transfer(msg.value);
         actualFounds+=msg.value;
+        emit foundProject(msg.sender,msg.value);
+    }
+
+    modifier onlyOwner(){
+        require(
+            msg.sender==author,
+            "Only owner can change the project name"
+        );
+        //the funcion is inserted where this symbol appears
+        _;
+    }
+
+
+    function changeProjectName(string memory _newName) public onlyOwner{
+        name=_newName;
+        emit changeName(author,_newName);
     }
 
 }

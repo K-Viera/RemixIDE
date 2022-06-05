@@ -27,6 +27,44 @@
 				"type": "constructor"
 			},
 			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "editor",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "newName",
+						"type": "string"
+					}
+				],
+				"name": "changeName",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "founder",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "founds",
+						"type": "uint256"
+					}
+				],
+				"name": "foundProject",
+				"type": "event"
+			},
+			{
 				"inputs": [],
 				"name": "actualFounds",
 				"outputs": [
@@ -50,6 +88,19 @@
 					}
 				],
 				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_newName",
+						"type": "string"
+					}
+				],
+				"name": "changeProjectName",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -127,11 +178,11 @@
 	},
 	"sources": {
 		"contracts/CrowdFunding.sol": {
-			"keccak256": "0xd91c592cdeb725d80456366da285c3db080d8f496d1a1d652b03dd626851936f",
+			"keccak256": "0x4b290c0530f92ec98aa935113114ea4a95331fec12b8752d113cc9a66b79d0ae",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://0936fe079e61134d95a7b2f376e201d237bcac181dfb39942504bc4f9311f644",
-				"dweb:/ipfs/Qmck1brRwcaT6TpFbJeSbDs4QM3UDa2x5TCQjq5bHey6rL"
+				"bzz-raw://d1964e04b6476e65ece0aa050eeedd7b87e946ff30daee930aeb86a307a315e5",
+				"dweb:/ipfs/QmdQcy4B48tXag1S5XqHdXjaJYD4kQ8pxjLfhigwTR7yj4"
 			]
 		}
 	},
